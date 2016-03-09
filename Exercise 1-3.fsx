@@ -16,9 +16,5 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *)
 
-(*
-    Write function expressions corresponding to the functions g and h in the exercises 1.1 and 1.2.
-*)
-
 let g = fun n -> n + 4;;
 let h = fun (x, y) -> System.Math.Sqrt(x * x + y * y);;

@@ -16,13 +16,6 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *)
 
-(*
-    Declare a function f: int -> bool, such that f(n) = true exactly when n is
-    divisible by 2 or divisible by 3 but not divisible by 5. Write down the
-    expected values of f(24), f(27), f(29) and f(30) and compare with the result.
-    Hint: n is divisible by q when n % q = 0.
-*)
-
 let f n = (n % 2 = 0 || n % 3 = 0) && n % 5 <> 0;;
 
 f 24;;

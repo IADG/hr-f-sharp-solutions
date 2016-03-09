@@ -16,17 +16,6 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *)
 
-(*
-    The sequence F0, F1, F2, ... of Fibonacci numbers is defined by:
-        F(0) = 0
-        F(1) = 1
-        F(n) = F(n - 1) + F(n - 2)
-    Thus, the first members of the sequence are 0, 1, 1, 2, 3, 5, 8, 13, ...
-    Declare an F# function to compute F(n). Use a declaration with 3 clauses,
-    where the patterns correspond to the 3 cases of the above definition.
-    Give an evaluation for F(4).
-*)
-
 let rec fib = function
     |   0   ->  0
     |   1   ->  1

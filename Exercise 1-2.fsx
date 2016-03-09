@@ -16,9 +16,4 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *)
 
-(*
-    Declare a function h: float * float -> float, where h(x, y) = sqrt(x^2 + y^2).
-    Hint: Use the function System.Math.Sqrt.
-*)
-
 let h (x, y) = System.Math.Sqrt(x * x + y * y);;

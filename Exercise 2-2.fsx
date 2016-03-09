@@ -16,12 +16,6 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *)
 
-(*
-    Declare an F# function pow: string * int -> string, where:
-    pow(s, n) = s · s · ... · s, where we use · to denote string concatenation.
-    (The F# representation is +.)
-*)
-
 let rec pow (s: string, n) =
     match (s, n) with
     | (s, 1) -> s

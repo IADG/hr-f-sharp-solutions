@@ -16,12 +16,6 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *)
 
-(*
-    Declare a recursive function sum: int * int -> int, where
-        sum (m, n) = m + (m + 1) + (m + 2) + ... (m + (n - 1)) + (m + n)
-    for m >= 0 and n >= 0. Hint: Use 2 clauses with (m, 0) and (m, n) as patterns.
-*)
-
 let rec sum = function
     |   (m, 0)  ->  m
     |   (m, n)  ->  sum (m, n - 1) + m + n

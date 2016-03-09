@@ -16,8 +16,4 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *)
 
-(*
-    Declare a function g: int -> int, where g(n) = n + 4.
-*)
-
 let g n = n + 4;;

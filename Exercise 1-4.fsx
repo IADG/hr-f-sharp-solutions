@@ -16,11 +16,6 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *)
 
-(*
-    Declare a recursive function f: int -> int, where f(n) = 1 + 2 + ... + (n-1) + n
-    for n >= 0. Hint: Use 2 clauses with 0 and n as patterns.
-*)
-
 let rec f = function
     |   0   ->  0
     |   n   ->  f (n - 1) + n

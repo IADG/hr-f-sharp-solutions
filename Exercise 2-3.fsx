@@ -16,10 +16,3 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *)
 
-(*
-    Declare the F# function isIthChar: string * int * char -> bool where the value
-    of isIthChar(str, i, ch) is true if and only if ch is the i'th character in
-    the string str (numbering starting at zero).
-*)
-
-let isIthChar (s: string, i, c) = s.[i] = c;;

@@ -17,14 +17,6 @@
 *)
 
 (*
-    Determine a type for each of the expressions:
-        1. (System.Math.PI, fact -1)
-        2. fact(fact 4)
-        3. power (System.Math.PI, fact 2)
-        4. (power, fact)
-*)
-
-(*
     1. Infinite evaluation
     2. val it: int
     3. val it: float
