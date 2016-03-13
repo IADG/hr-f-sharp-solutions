@@ -23,3 +23,11 @@ let rec doesntDivideRange (first, last, n) =
     then doesntDivide (first, n) && doesntDivideRange (first + 1, last, n)
     else true
 ;;
+
+let isPrime n = n > 1 && doesntDivideRange (2, n - 1, n);;
+
+let rec nextPrime n =
+    if isPrime <| n + 1
+    then n + 1
+    else nextPrime <| n + 1
+;;
