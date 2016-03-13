@@ -16,4 +16,4 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *)
 
-let notDivisible (d, n) = n % d <> 0;;
+let doesntDivide (d, n) = n % d <> 0;;
