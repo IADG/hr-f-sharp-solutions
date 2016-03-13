@@ -1,5 +1,5 @@
 ﻿(*
-    Exercise 2-9 from Functional Programming Using F#
+    Exercise 2-11 from Functional Programming Using F#
     Copyright (c) 2016 Răzvan Mocanu
 
     This program is free software: you can redistribute it and/or modify
