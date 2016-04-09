@@ -16,4 +16,4 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *)
 
-let h (x, y) = System.Math.Sqrt(x * x + y * y);;
+let h (x, y) = System.Math.Sqrt (x * x + y * y);;

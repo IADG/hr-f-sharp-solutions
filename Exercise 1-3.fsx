@@ -17,4 +17,4 @@
 *)
 
 let g = fun n -> n + 4;;
-let h = fun (x, y) -> System.Math.Sqrt(x * x + y * y);;
+let h = fun (x, y) -> System.Math.Sqrt (x * x + y * y);;
