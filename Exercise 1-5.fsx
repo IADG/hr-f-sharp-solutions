@@ -16,14 +16,15 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *)
 
-let rec fib = function
+let rec computeFibonacci = function
     |   0   ->  0
     |   1   ->  1
-    |   n   ->  fib (n - 1) + fib (n - 2)
+    |   n   ->  computeFibonacci (n - 1) + computeFibonacci (n - 2)
 ;;
 
 (*
     Evaluation for F 4:
+
         F 4 -> F (4 - 1) + F (4 - 2)
             -> F 3 + F 2
             -> F (3 - 1) + F (3 - 2) + F (2 - 1) + F (2 - 2)
