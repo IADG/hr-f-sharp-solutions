@@ -16,7 +16,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *)
 
-let rec sum = function
+let rec calculateSum = function
     |   (m, 0)  ->  m
-    |   (m, n)  ->  sum (m, n - 1) + m + n
+    |   (m, n)  ->  calculateSum (m, n - 1) + m + n
 ;;

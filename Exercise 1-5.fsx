@@ -16,10 +16,10 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *)
 
-let rec computeFibonacci = function
+let rec calculateFibonacci = function
     |   0   ->  0
     |   1   ->  1
-    |   n   ->  computeFibonacci (n - 1) + computeFibonacci (n - 2)
+    |   n   ->  calculateFibonacci (n - 1) + calculateFibonacci (n - 2)
 ;;
 
 (*
