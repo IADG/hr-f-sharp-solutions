@@ -19,9 +19,8 @@
 let doesntDivide (d, n) = n % d <> 0;;
 
 let rec doesntDivideRange (first, last, n) =
-    if first <= last
-    then doesntDivide (first, n) && doesntDivideRange (first + 1, last, n)
-    else true
+    first > last
+    || doesntDivide (first, n) && doesntDivideRange (first + 1, last, n)
 ;;
 
 let isPrime n = n > 1 && doesntDivideRange (2, n - 1, n);;
