@@ -16,8 +16,8 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *)
 
-let rec pow (s: string, n) =
+let rec repeatString (s: string, n) =
     match (s, n) with
     | (s, 1) -> s
-    | (s, n) -> s + pow (s, n - 1)
+    | (s, n) -> s + repeatString (s, n - 1)
 ;;
