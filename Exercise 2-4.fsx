@@ -20,8 +20,8 @@ let isCharAtIndex (s: string, i, c) = s.[i] = c;;
 
 let countCharAtIndex a = if isCharAtIndex a then 1 else 0;;
 
-let rec occurrencesFromIndex (s, i, c) =
+let rec countOccurrencesFromIndex (s, i, c) =
     if i >= 0 && i < String.length s
-    then countCharAtIndex (s, i, c) + occurrencesFromIndex (s, i + 1, c)
+    then countCharAtIndex (s, i, c) + countOccurrencesFromIndex (s, i + 1, c)
     else 0
 ;;
