@@ -16,8 +16,8 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *)
 
-let rec binomialCoefficient = function
+let rec computeBinomialCoefficient = function
     | (n, 0) -> 1
     | (n, k) when n = k -> 1
-    | (n, k) -> binomialCoefficient (n - 1, k - 1) + binomialCoefficient (n - 1, k)
+    | (n, k) -> computeBinomialCoefficient (n - 1, k - 1) + computeBinomialCoefficient (n - 1, k)
 ;;
