@@ -27,13 +27,13 @@ let validateMinutes m = m < 0uy || m > 59uy
 let validateAmPm ampm = ampm <> "AM" && ampm <> "PM"
 
 let invalidHours = "Expected `hours` to be in range [1, 12]"
-let invalidMInutes = "Expected `minute` to be in range [0, 59]"
+let invalidMinutes = "Expected `minute` to be in range [0, 59]"
 let invalidAmPm = "Expected `ampm` to equal `AM` or `PM`"
 
 let createTimeTuple (t: TimeTuple) =
     match t with
     | (h, _, _) when validateHours h -> failwith invalidHours
-    | (_, m, _) when validateMinutes m -> failwith invalidMInutes
+    | (_, m, _) when validateMinutes m -> failwith invalidMinutes
     | (_, _, ampm) when validateAmPm ampm -> failwith invalidAmPm
     | _ -> t
 
@@ -42,7 +42,7 @@ let createTimeRecord (t: TimeRecord) =
     | { hours = h; minutes = _; ampm = _ }
         when validateHours h -> failwith invalidHours
     | { hours = _; minutes = m; ampm = _ }
-        when validateMinutes m -> failwith invalidMInutes
+        when validateMinutes m -> failwith invalidMinutes
     | { hours = _; minutes = _; ampm = ampm }
         when validateAmPm ampm -> failwith invalidAmPm
     | _ -> t
