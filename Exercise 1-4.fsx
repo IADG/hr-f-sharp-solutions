@@ -17,8 +17,8 @@
 *)
 
 let rec f = function
-    |   0   ->  0
-    |   n   ->  f (n - 1) + n
+    | 0 -> 0
+    | n -> f (n - 1) + n
 
 (*
     Recursion formula:

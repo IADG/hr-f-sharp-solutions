@@ -17,9 +17,9 @@
 *)
 
 let rec calculateFibonacci = function
-    |   0   ->  0
-    |   1   ->  1
-    |   n   ->  calculateFibonacci (n - 1) + calculateFibonacci (n - 2)
+    | 0 -> 0
+    | 1 -> 1
+    | n -> calculateFibonacci (n - 1) + calculateFibonacci (n - 2)
 
 (*
     Evaluation for F 4:
