@@ -16,17 +16,15 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *)
 
-let doesntDivide (d, n) = n % d <> 0;;
+let doesntDivide (d, n) = n % d <> 0
 
 let rec doesntDivideRange (first, last, n) =
     first > last
     || doesntDivide (first, n) && doesntDivideRange (first + 1, last, n)
-;;
 
-let isPrime n = n > 1 && doesntDivideRange (2, n - 1, n);;
+let isPrime n = n > 1 && doesntDivideRange (2, n - 1, n)
 
 let rec findNextPrime n =
     if isPrime <| n + 1
     then n + 1
     else findNextPrime <| n + 1
-;;

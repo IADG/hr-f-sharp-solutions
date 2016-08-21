@@ -18,8 +18,6 @@
 
 let isLowerCaseVowel c =
     c = 'a' || c = 'e' || c = 'i' || c = 'o' || c = 'u' || c = 'y'
-;;
 
 let isLowerCaseConsonant c =
     c = 'y' || System.Char.IsLower c && not (isLowerCaseVowel c)
-;;

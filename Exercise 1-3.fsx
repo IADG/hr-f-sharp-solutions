@@ -16,5 +16,5 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *)
 
-let g = fun n -> n + 4;;
-let h = fun (x, y) -> System.Math.Sqrt (x * x + y * y);;
+let g = fun n -> n + 4
+let h = fun (x, y) -> System.Math.Sqrt (x * x + y * y)

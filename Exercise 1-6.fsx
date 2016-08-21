@@ -19,4 +19,3 @@
 let rec calculateSum = function
     |   (m, 0)  ->  m
     |   (m, n)  ->  calculateSum (m, n - 1) + m + n
-;;

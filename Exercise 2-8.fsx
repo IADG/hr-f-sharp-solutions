@@ -20,4 +20,3 @@ let rec computeBinomialCoefficient = function
     | (n, 0) -> 1
     | (n, k) when n = k -> 1
     | (n, k) -> computeBinomialCoefficient (n - 1, k - 1) + computeBinomialCoefficient (n - 1, k)
-;;

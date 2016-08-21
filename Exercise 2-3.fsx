@@ -16,4 +16,4 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *)
 
-let isCharAtIndex (s: string, i, c) = s.[i] = c;;
+let isCharAtIndex (s: string, i, c) = s.[i] = c

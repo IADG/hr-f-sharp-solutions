@@ -16,9 +16,9 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *)
 
-let f n = (n % 2 = 0 || n % 3 = 0) && n % 5 <> 0;;
+let f n = (n % 2 = 0 || n % 3 = 0) && n % 5 <> 0
 
-f 24;;
-f 27;;
-f 29;;
-f 30;;
+f 24
+f 27
+f 29
+f 30

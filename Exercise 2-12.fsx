@@ -16,6 +16,6 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *)
 
-let rec findRoot f n = if f n = 0 then n else findRoot f (n + 1);;
+let rec findRoot f n = if f n = 0 then n else findRoot f (n + 1)
 
-let findMinimumRoot f = findRoot f 1;;
+let findMinimumRoot f = findRoot f 1

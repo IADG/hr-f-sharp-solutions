@@ -16,6 +16,6 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *)
 
-let calculatePriceWithVAT tax (price: float) = price * (1.0 + float tax / 100.0);;
+let calculatePriceWithVAT tax (price: float) = price * (1.0 + float tax / 100.0)
 
-let calculatePrice tax (priceWithVAT: float) = priceWithVAT / (1.0 + float tax / 100.0);;
+let calculatePrice tax (priceWithVAT: float) = priceWithVAT / (1.0 + float tax / 100.0)

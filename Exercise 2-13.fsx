@@ -16,6 +16,6 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *)
 
-let curry f = fun x -> fun y -> f (x, y);;
+let curry f = fun x -> fun y -> f (x, y)
 
-let uncurry f = fun (x, y) -> f x y;;
+let uncurry f = fun (x, y) -> f x y

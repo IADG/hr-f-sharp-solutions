@@ -16,14 +16,13 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *)
 
-let isCharAtIndex (s: string, i, c) = s.[i] = c;;
+let isCharAtIndex (s: string, i, c) = s.[i] = c
 
-let countCharAtIndex a = if isCharAtIndex a then 1 else 0;;
+let countCharAtIndex a = if isCharAtIndex a then 1 else 0
 
 let rec countOccurrencesFromIndex (s, i, c) =
     if i >= 0 && i < String.length s
     then countCharAtIndex (s, i, c) + countOccurrencesFromIndex (s, i + 1, c)
     else 0
-;;
 
-let countOccurrencesInString (s, c) = countOccurrencesFromIndex (s, 0, c);;
+let countOccurrencesInString (s, c) = countOccurrencesFromIndex (s, 0, c)
