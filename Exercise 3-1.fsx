@@ -22,40 +22,38 @@ type TimeRecord =
     minutes: byte;
     ampm: string }
 
-let validateHours h = h < 1uy || h > 12uy
-let validateMinutes m = m < 0uy || m > 59uy
-let validateAmPm ampm = ampm <> "AM" && ampm <> "PM"
+let areHoursInvalid h = h < 1uy || h > 12uy
+let areMinutesInvalid m = m < 0uy || m > 59uy
+let isAmPmInvalid ampm = ampm <> "AM" && ampm <> "PM"
 
 let invalidHours = "Expected `hours` to be in range [1, 12]"
 let invalidMinutes = "Expected `minute` to be in range [0, 59]"
 let invalidAmPm = "Expected `ampm` to equal `AM` or `PM`"
 
-let createTimeTuple (t: TimeTuple) =
-    match t with
-    | (h, _, _) when validateHours h -> failwith invalidHours
-    | (_, m, _) when validateMinutes m -> failwith invalidMinutes
-    | (_, _, ampm) when validateAmPm ampm -> failwith invalidAmPm
-    | _ -> t
+let createTimeTuple h m ampm =
+    if areHoursInvalid h then failwith invalidHours
+    else if areMinutesInvalid m then failwith invalidMinutes
+    else if isAmPmInvalid ampm then failwith invalidAmPm
+    (h, m, ampm)
 
-let createTimeRecord (t: TimeRecord) =
-    match t with
-    | { hours = h; minutes = _; ampm = _ }
-        when validateHours h -> failwith invalidHours
-    | { hours = _; minutes = m; ampm = _ }
-        when validateMinutes m -> failwith invalidMinutes
-    | { hours = _; minutes = _; ampm = ampm }
-        when validateAmPm ampm -> failwith invalidAmPm
-    | _ -> t
-
-let (@<) (t1: TimeTuple) (t2: TimeTuple) =
+let (<<<) (t1: TimeTuple) (t2: TimeTuple) =
     let h1, m1, ampm1 = t1
     let h2, m2, ampm2 = t2
     ampm1 < ampm2
-    || ampm1 = ampm2
-        && (h1 = h2 && m1 < m2
-            || h1 <> h2 && (h1 = 12uy || h2 <> 12uy && h1 < h2))
+ || ampm1 = ampm2
+    && (h1 = h2 && m1 < m2
+        || h1 <> h2 && (h1 = 12uy || h2 <> 12uy && h1 < h2))
 
-let (.@<) (t1: TimeRecord) (t2: TimeRecord) =
+let createTimeRecord h m ampm =
+    if areHoursInvalid h then failwith invalidHours
+    else if areMinutesInvalid m then failwith invalidMinutes
+    else if isAmPmInvalid ampm then failwith invalidAmPm
+    { hours = h; minutes = m; ampm = ampm }
+
+let (.<<<.) (t1: TimeRecord) (t2: TimeRecord) =
     let { hours = h1; minutes = m1; ampm = ampm1 } = t1
     let { hours = h2; minutes = m2; ampm = ampm2 } = t2
-    (h1, m1, ampm1) @< (h2, m2, ampm2)
+    ampm1 < ampm2
+ || ampm1 = ampm2
+     && (h1 = h2 && m1 < m2
+        || h1 <> h2 && (h1 = 12uy || h2 <> 12uy && h1 < h2))
