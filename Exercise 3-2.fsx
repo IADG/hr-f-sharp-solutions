@@ -65,12 +65,20 @@ let rec normalizeAmountTuple = function
 let (+++) (x: AmountTuple) (y: AmountTuple) =
     let xPounds, xShillings, xPence = x
     let yPounds, yShillings, yPence = y
-    normalizeAmountTuple (xPounds + yPounds, xShillings + yShillings, xPence + yPence)
+    normalizeAmountTuple (
+        xPounds + yPounds,
+        xShillings + yShillings,
+        xPence + yPence
+        )
 
 let (---) (x: AmountTuple) (y: AmountTuple) =
     let xPounds, xShillings, xPence = x
     let yPounds, yShillings, yPence = y
-    normalizeAmountTuple (xPounds - yPounds, xShillings - yShillings, xPence - yPence)
+    normalizeAmountTuple (
+        xPounds - yPounds,
+        xShillings - yShillings,
+        xPence - yPence
+        )
 
 type AmountRecord =
     { pounds: int;
