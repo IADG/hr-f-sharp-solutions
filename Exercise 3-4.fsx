@@ -26,7 +26,7 @@ let mirrorAroundYAxis (line: StraightLine) =
     let m, b = line
     ( -m, b )
 
-let printEquation (line: StraightLine) =
+let describeEquation (line: StraightLine) =
     let m, b = line
     "y = "
   + string m
