@@ -1,5 +1,5 @@
 ﻿(*
-    Exercise 3-1 from Functional Programming Using F#
+    Exercise 3-1, 3.6 from Functional Programming Using F#
     Copyright (c) 2016 Răzvan Mocanu
 
     This program is free software: you can redistribute it and/or modify
@@ -16,24 +16,24 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *)
 
-type TimeTuple = byte * byte * string
+type Ampm =
+    | AM
+    | PM
+type TimeTuple = byte * byte * Ampm
 type TimeRecord =
     { hours: byte;
     minutes: byte;
-    ampm: string }
+    ampm: Ampm }
 
 let areHoursInvalid h = h < 1uy || h > 12uy
 let areMinutesInvalid m = m < 0uy || m > 59uy
-let isAmPmInvalid ampm = ampm <> "AM" && ampm <> "PM"
 
 let invalidHours = "Expected `hours` to be in range [1, 12]"
 let invalidMinutes = "Expected `minute` to be in range [0, 59]"
-let invalidAmPm = "Expected `ampm` to equal `AM` or `PM`"
 
-let createTimeTuple h m ampm =
+let createTimeTuple h m ampm : TimeTuple =
     if areHoursInvalid h then failwith invalidHours
     else if areMinutesInvalid m then failwith invalidMinutes
-    else if isAmPmInvalid ampm then failwith invalidAmPm
     (h, m, ampm)
 
 let (<<<) (t1: TimeTuple) (t2: TimeTuple) =
@@ -44,10 +44,9 @@ let (<<<) (t1: TimeTuple) (t2: TimeTuple) =
     && (h1 = h2 && m1 < m2
         || h1 <> h2 && (h1 = 12uy || h2 <> 12uy && h1 < h2))
 
-let createTimeRecord h m ampm =
+let createTimeRecord h m ampm : TimeRecord =
     if areHoursInvalid h then failwith invalidHours
     else if areMinutesInvalid m then failwith invalidMinutes
-    else if isAmPmInvalid ampm then failwith invalidAmPm
     { hours = h; minutes = m; ampm = ampm }
 
 let (.<<<.) (t1: TimeRecord) (t2: TimeRecord) =
