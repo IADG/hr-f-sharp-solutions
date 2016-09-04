@@ -16,7 +16,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *)
 
-let rec filterItemsAtEvenIndexes list =
-    match list with
-    | x0 :: x1 :: xs -> x0 :: filterItemsAtEvenIndexes xs
-    | _ -> list
+let rec filterEvenIndexes xs =
+    match xs with
+    | x0 :: x1 :: xs -> x0 :: filterEvenIndexes xs
+    | _ -> xs
