@@ -18,7 +18,7 @@
 
 let isEven x = x % 2 = 0
 
-let rec filterEven list =
-    match list with
+let rec filterEven xs =
+    match xs with
     | x :: xs -> (if isEven x then [x] else []) @ filterEven xs
     | _ -> []
