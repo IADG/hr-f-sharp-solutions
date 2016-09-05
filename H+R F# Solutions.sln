@@ -37,6 +37,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Exercise 4-6.fsx = Exercise 4-6.fsx
 		Exercise 4-7.fsx = Exercise 4-7.fsx
 		Exercise 4-8.fsx = Exercise 4-8.fsx
+		Exercise 4-9.fsx = Exercise 4-9.fsx
 		LICENSE = LICENSE
 		README.md = README.md
 	EndProjectSection
