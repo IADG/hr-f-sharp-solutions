@@ -16,4 +16,4 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *)
 
-let generateListDownToOne n = [n .. -1 .. 1]
+let generateDownToOne n = [n .. -1 .. 1]

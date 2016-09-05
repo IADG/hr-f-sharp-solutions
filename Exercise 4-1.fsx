@@ -16,4 +16,4 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *)
 
-let generateListUpTo n = [1 .. n]
+let generateUpTo n = [1 .. n]
