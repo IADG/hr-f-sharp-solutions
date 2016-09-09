@@ -18,6 +18,6 @@
 
 let rec count (xs, x) =
     match xs with
-    | y :: xs when y < x -> count (xs, x)
-    | y :: xs when y = x -> 1 + count (xs, x)
+    | y :: ys when y < x -> count (ys, x)
+    | y :: ys when y = x -> 1 + count (ys, x)
     | _ -> 0
