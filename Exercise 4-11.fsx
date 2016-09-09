@@ -21,3 +21,9 @@ let rec count (xs, x) =
     | y :: ys when y < x -> count (ys, x)
     | y :: ys when y = x -> 1 + count (ys, x)
     | _ -> 0
+
+let rec insert (xs, x) =
+    match xs with
+    | y :: _ as ys when x <= y -> x :: ys
+    | y :: ys -> y :: insert (ys, x)
+    | _ -> [x]

@@ -16,8 +16,3 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *)
 
-let rec insert (xs, x) =
-    match xs with
-    | y :: _ as ys when x <= y -> x :: ys
-    | y :: ys -> y :: insert (ys, x)
-    | _ -> [x]
