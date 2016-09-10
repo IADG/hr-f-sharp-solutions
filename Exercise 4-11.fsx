@@ -27,3 +27,9 @@ let rec insert (xs, x) =
     | y :: _ as ys when x <= y -> x :: ys
     | y :: ys -> y :: insert (ys, x)
     | _ -> [x]
+
+let rec intersect = function
+    | (x :: xs, y :: ys) when x = y -> x :: intersect (xs, ys)
+    | (x :: xs, (y :: _ as ys)) when x < y -> intersect (xs, ys)
+    | ((x :: _ as xs), y :: ys) when x > y -> intersect (xs, ys)
+    | _ -> []
