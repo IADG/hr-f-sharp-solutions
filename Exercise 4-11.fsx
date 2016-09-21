@@ -33,3 +33,11 @@ let rec intersect = function
     | (x :: xs, (y :: _ as ys)) when x < y -> intersect (xs, ys)
     | ((x :: _ as xs), y :: ys) when x > y -> intersect (xs, ys)
     | _ -> []
+
+let rec plus = function
+    | (x :: xs, (y :: _ as ys)) when x < y -> x :: plus (xs, ys)
+    | ((x :: _ as xs), y :: ys) when x > y -> y :: plus (xs, ys)
+    | (x :: xs, y :: ys) when x = y -> x :: y :: plus (xs, ys)
+    | ([], ys) -> ys
+    | (xs, []) -> xs
+    | _ -> []
