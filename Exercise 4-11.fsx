@@ -41,3 +41,10 @@ let rec plus = function
     | ([], ys) -> ys
     | (xs, []) -> xs
     | _ -> []
+
+let rec minus = function
+    | (x :: xs, (y :: _ as ys)) when x < y -> x :: minus (xs, ys)
+    | (x :: xs, y :: ys) when x = y -> minus (xs, ys)
+    | ((x :: _ as xs), y :: ys) when x > y -> minus (xs, ys)
+    | (xs, []) -> xs
+    | _ -> []
