@@ -16,3 +16,8 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *)
 
+let rec sum (p, xs) =
+    match xs with
+    | x :: xs when p x -> x + sum (p, xs)
+    | x :: xs when not (p x) -> sum (p, xs)
+    | _ -> 0
