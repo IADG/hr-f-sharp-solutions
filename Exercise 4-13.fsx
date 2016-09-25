@@ -16,21 +16,23 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *)
 
-let rec minimum = function
+let rec min (xs: int list): int =
+    match xs with
+    | [x] -> x
     | x :: xs ->
-        match minimum xs with
-        | Some m when x < m -> Some x
-        | Some m -> Some m
-        | None -> Some x
-    | _ -> None
+        let m = min xs
+        if x < m then x else m
+    | [] -> failwith "Expected list to be non-empty."
 
-let rec delete (a, xs) =
+let rec delete (a: int, xs: int list) =
     match xs with
     | x :: xs when x = a -> xs
     | x :: xs -> x :: delete (a, xs)
     | _ -> []
 
-let rec sort xs =
-    match minimum xs with
-    | Some m -> m :: sort (delete (m, xs))
-    | None -> []
+let rec sort (xs: int list): int list =
+    match xs with
+    | x :: xs' ->
+        let m = min xs
+        m :: sort (delete (m, xs))
+    | [] -> []
