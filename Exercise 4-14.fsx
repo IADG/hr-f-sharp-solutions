@@ -16,9 +16,9 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *)
 
-let rec minimum = function
+let rec min = function
     | x :: xs ->
-        match minimum xs with
+        match min xs with
         | Some m when x < m -> Some x
         | Some m -> Some m
         | None -> Some x
