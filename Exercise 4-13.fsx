@@ -29,3 +29,8 @@ let rec delete (a, xs) =
     | x :: xs when x = a -> xs
     | x :: xs -> x :: delete (a, xs)
     | _ -> []
+
+let rec sort xs =
+    match minimum xs with
+    | Some m -> m :: sort (delete (m, xs))
+    | None -> []
