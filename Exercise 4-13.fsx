@@ -23,3 +23,9 @@ let rec minimum = function
         | Some m -> Some m
         | None -> Some x
     | _ -> None
+
+let rec delete (a, xs) =
+    match xs with
+    | x :: xs when x = a -> xs
+    | x :: xs -> x :: delete (a, xs)
+    | _ -> []
